@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+  <script>
+    window.onload = function (){
+     let aBody = document.getElementsByTagName("body")[0];
+     let calculator = document.createElement("div");
+     let input = document.createElement("input");
+     let flex_container = document.createElement("div");
+     let arr = ['(',')','±','÷','7','8','9','x','4','5','6','-','1','2','3','+','0','.','C','='];
+
+     aBody.appendChild(calculator);
+     calculator.appendChild(input);
+     calculator.appendChild(flex_container);
+
+     //calculator css
+     calculator.style.width = '250px';
+     calculator.style.fontSize = '100%';
+     calculator.style.border = '1px solid black';
+     calculator.style.padding = '10px';
+     calculator.style.borderRadius = '7px';
+     calculator.style.marginLeft = 'auto';
+     calculator.style.marginRight = 'auto';
+     calculator.style.fontFamily = 'Verdana';
+     calculator.style.height = '320px';
+
+     //input css
+     input.type = 'text';
+     input.placeholder = '0';
+     input.style.fontSize = '2em';
+     input.style.textAlign = 'right';
+     input.style.borderRadius = '5px';
+     input.style.width = '240px';
+     input.style.height = '35px';
+     input.style.marginBottom = '10px';
+     input.style.padding = '1%';
+     
+      //container
+      flex_container.style.display = 'inline-flex';
+      flex_container.style.flexFlow = 'row wrap';
+      flex_container.style.justifyContent = 'space-between';
+
+      let flex_item = null;
+      for (let i = 0; i < 20; i++) {
+        flex_item = document.createElement("button");
+		// btn css
+		    flex_item.style.borderRadius = '5px';
+		    flex_item.style.width = '50px';
+		    flex_item.style.fontSize = '1em';
+		    flex_item.style.textAlign = 'center';
+		    flex_item.style.padding = '.5em';
+		    flex_item.style.flexGrow = '1';
+		    flex_item.style.margin = '0 5px 5px 0';
+        flex_item.textContent = arr[i];
+		
+        flex_container.appendChild(flex_item);
+      }
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
